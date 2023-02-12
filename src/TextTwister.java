@@ -16,7 +16,7 @@ public class TextTwister
     public String stringWithLetterAtIndexRemoved(String s, int i)
     {
         String result = "";
-        // TODO: you write this!
+        // TODO: (OPTIONAL) you write this! (I think you will find this helpful later....)
 
         return result;
     }
