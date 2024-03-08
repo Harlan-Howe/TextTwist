@@ -86,6 +86,18 @@ public class TextTwister
     /**
      * returns a new list of words that all start with contents of "prefix" and have combinations of the letters in
      * "pool"
+     * For example, suppose we have a prefix "pla" and a pool "ids".
+     * We'll consider the "i" from the pool. This gives us "plai" but recursion might return
+     *        a list of ("plaid", "plaids", "plais", and "plaisd".)
+     *        Hint: what do all those words start with? What is used to make the differences?
+     * Next consider the "d" in the pool. This gives us "plad" but recursion might return
+     *        a list of ("pladi", "pladis", "plads", and "pladsi".)
+     * Also consider the "s" in the pool. This gives us "plas" but recursion might return
+     *        a list of ("plasi", "plasid", "plasd" and "plasdi".)
+     *
+     * So this method would return a list of ("plai", "plaid", "plaids", "plais", and "plaisd", "plad", "pladi",
+     * "pladis", "plads", "pladsi", "plas", "plasi", "plasid", "plasd" and "plasdi".)
+     *
      * @param prefix - the starting part of all words to be generated
      * @param pool - the letters available to "play" with to make new words
      * @return - a list of words that start with "prefix" and end with a combination of letters in "pool" zero or one
