@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TextTwist_2021.iml" filepath="$PROJECT_DIR$/TextTwist_2021.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextTwist.iml" filepath="$PROJECT_DIR$/TextTwist.iml" />
     </modules>
   </component>
 </project>
