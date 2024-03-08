@@ -8,33 +8,34 @@ public class TextTwistRunner
 
         Scanner keyReader = new Scanner(System.in);
         System.out.println("Enter a word to twist: ");
-        String wordToTwist = keyReader.nextLine();
-
-        ArrayList<String> wordList = tt.twistWord(wordToTwist);
-
-        if (wordList == null)
-            throw new RuntimeException("I got a null list back from the TextTwister. I'm guessing you haven't written the method yet.");
-
-        for (String s: wordList)
+        while (true)
         {
-            System.out.println(s);
-        }
+            String wordToTwist = keyReader.nextLine();
 
-        /*
-        Alternate version... prints the words, sorted by length.
+            ArrayList<String> wordList = tt.twistWord(wordToTwist);
 
-        for (int i=1;i<=wordToTwist.length(); i++)
-        {
-            for (String s: wordList)
+            if (wordList == null)
+                throw new RuntimeException("I got a null list back from the TextTwister. I'm guessing you haven't written the method yet.");
+
+            for (String s : wordList) {
+                System.out.println(s);
+            }
+
+            /*
+            Alternate version... prints the words, sorted by length. Perhaps not the most efficient way of doing this.
+
+            for (int i=1;i<=wordToTwist.length(); i++)
             {
-                if (s.length() == i)
+                for (String s: wordList)
                 {
-                    System.out.println(s);
+                    if (s.length() == i)
+                    {
+                        System.out.println(s);
+                    }
                 }
             }
-        }
         */
 
-
+        }
     }
 }
