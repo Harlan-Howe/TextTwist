@@ -4,11 +4,12 @@ public class TextTwistRunner
 {
     public static void main(String[] args)
     {
+        TextTwister tt = new TextTwister();
+
         Scanner keyReader = new Scanner(System.in);
         System.out.println("Enter a word to twist: ");
         String wordToTwist = keyReader.nextLine();
 
-        TextTwister tt = new TextTwister();
         ArrayList<String> wordList = tt.twistWord(wordToTwist);
 
         if (wordList == null)
