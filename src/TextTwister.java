@@ -1,7 +1,43 @@
+import java.io.*;
 import java.util.ArrayList;
 
 public class TextTwister
 {
+
+    ArrayList<String> dictionary;
+
+    public TextTwister()
+    {
+        loadDictionary();
+    }
+
+    /**
+     * reads the words in the file "word_list_moby_crossword.flat.txt" into the "dictionary" ArrayList.
+     */
+    private static void loadDictionary() {
+        ArrayList<String> dictionary = new ArrayList<String>();
+        File inputFile = new File("word_list_moby_crossword.flat.txt");
+        try
+        {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String word;
+            while((word = reader.readLine())!=null)
+            {
+                dictionary.add(word);
+            }
+
+        }catch (FileNotFoundException fnfExp)
+        {
+            System.out.println("File not found.");
+            fnfExp.printStackTrace();
+        }
+        catch (IOException ioExp)
+        {
+            ioExp.printStackTrace();
+        }
+        System.out.println("Dictionary Loaded. "+dictionary.size());
+    }
+
     /**
      * takes a string and makes a copy with the letter at index i removed.
      * For example:
@@ -82,6 +118,7 @@ public class TextTwister
         //                   result. Your search can be linear, or a binary search. (If you wish to do a recursive
         //                   binary search, you'll want to write a separate, recursive method - this method isn't
         //                   recursive.)
+        //loads the words from the dictionary file into memory.
 
 
         return realWords;
