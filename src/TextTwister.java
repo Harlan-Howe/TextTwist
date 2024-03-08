@@ -113,14 +113,45 @@ public class TextTwister
     public ArrayList<String> getRealWordsFromList(ArrayList<String> randomWords)
     {
         ArrayList<String> realWords = new ArrayList<String>();
-        // TODO (Optional) - Load in the "word_list_moby_crossword.flat.txt" file (See Boggle or BST for how to do this)
-        //                   and search in that dictionary for each word in randomWords, appending each one you find to
-        //                   result. Your search can be linear, or a binary search. (If you wish to do a recursive
-        //                   binary search, you'll want to write a separate, recursive method - this method isn't
-        //                   recursive.)
-        //loads the words from the dictionary file into memory.
+        // TODO (Optional) - Loop through each word in randomWords and search for that word in the "dictionary" ArrayList.
+        //                   If you find a match in the dictionary, append this word to "realWords."
+        //                   Your search can be linear, or a binary search. (If you wish to do a recursive
+        //                   binary search, I'd suggest that you *don't* try making _this_ method recursive, but call
+        //                   "wordInDictionaryRange()" (the next method) from here and fill that recursive method in.)
 
 
         return realWords;
+    }
+
+    /**
+     * A recursive search through the dictionary to determine whether the given word is a member.
+     * @param wordToFind - the word to look for
+     * @param start - the index of beginning of the range of words to look at.
+     * @param end - the index of the last word to look at.
+     * @return - whether the word is contained in "dictionary."
+     */
+    public boolean wordInDictionaryRange(String wordToFind, int start, int end)
+    {
+        // TODO: (Optional) - fill in this recursive binary search.
+        // here's the outline for how to do this:
+        //  base case #0: if end is before start... think about whether that means to return true or false.
+
+        //  base case #1: find the midpoint between start and end. Is wordToFind at this place in the dictionary? If so,
+        //  should you return true or false?
+
+        // Figure out whether the word you are looking for falls in before or after the midpoint. There is a handy tool
+        // for finding alphabetical order:
+        //       int result = stringA.compareTo(stringB)
+        // If stringA is before stringB in the dictionary, result will give you a negative number.
+        // If stringA is after stringB in the dictionary, result will be a positive number.
+        // (My mnemonic for this is result is akin to imagine an all-inclusive dictionary of all possible strings. Then
+        // result = (position of A) - (position of B). That's probably not what it _actually_ is, but it is a good way
+        // to remember what is positive and what is negative.
+
+        // Once you know where the word is, either call this method recursively for the first half or the second half.
+        // (Don't include the midpoint, itself... you know the word isn't there now.)
+        // Note: this recursive method returns a boolean value. What will you do with that value?
+
+        return false; // temporary... replace this.
     }
 }
