@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class TextTwister
 {
 
-    ArrayList<String> dictionary;
+    private ArrayList<String> dictionary;
 
     public TextTwister()
     {
@@ -14,7 +14,7 @@ public class TextTwister
     /**
      * reads the words in the file "word_list_moby_crossword.flat.txt" into the "dictionary" ArrayList.
      */
-    private static void loadDictionary() {
+    private void loadDictionary() {
         ArrayList<String> dictionary = new ArrayList<String>();
         File inputFile = new File("word_list_moby_crossword.flat.txt");
         try
