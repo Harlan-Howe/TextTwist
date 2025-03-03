@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TextTwister
 {
@@ -39,19 +40,20 @@ public class TextTwister
     }
 
     /**
-     * takes a string and makes a copy with the letter at index i removed.
+     * takes an ArrayList of letters and makes a copy with the letter at index i removed.
      * For example:
-     *      stringWithLetterAtIndexRemoved("bird", 2) --> "bid"
-     *      stringWithLetterAtIndexRemoved("bird", 0) --> "ird"
-     *      stringWithLetterAtIndexRemoved("rodent", 5) --> "roden"
-     *      stringWithLetterAtIndexRemoved("rodent", 6) --> throws an exception.
-     * @param s - the source string
+     *      stringWithLetterAtIndexRemoved(["b","i","r","d", 2) --> ["b","i","d"]
+     *      stringWithLetterAtIndexRemoved(["b","i","r","d", 0) --> ["i","r","d"]
+     *      stringWithLetterAtIndexRemoved(["r","o","d","e","n","t"], 5) --> ["r","o","d","e","n"]
+     *      stringWithLetterAtIndexRemoved(["r","o","d","e","n","t"], 6) --> throws an exception.
+     * @param letters - the source list of letters
      * @param i - the index of the character to remove
-     * @return - a string that is one character shorter than s.
+     * @return - another ArrayList of letters that is one character shorter than s.
      */
-    public String stringWithLetterAtIndexRemoved(String s, int i)
+    public ArrayList<String> stringWithLetterAtIndexRemoved(ArrayList<String> letters, int i)
     {
-        String result = "";
+        ArrayList<String> result = new ArrayList<String>();
+
         // TODO: (OPTIONAL) you write this! (I think you will find this helpful later....)
 
         return result;
@@ -70,10 +72,12 @@ public class TextTwister
     public ArrayList<String> twistWord(String wordToTwist)
     {
         ArrayList<String> result = null;
+        String[] letters = wordToTwist.split("");
+        ArrayList<String> pool = new ArrayList<String>(List.of(letters));
+
         // TODO: write this method.
-        // This is almost certainly a wrapper method that should
-        // call a recursive method that returns an ArrayList of
-        // Strings that you will subsequently return.
+        // This is a wrapper method that should call the overloaded, recursive version of the twistWord() method that
+        // returns an ArrayList of Strings that you will subsequently return.
 
         return result;
     }
@@ -86,7 +90,7 @@ public class TextTwister
     /**
      * returns a new list of words that all start with contents of "prefix" and have combinations of the letters in
      * "pool"
-     * For example, suppose we have a prefix "pla" and a pool "ids".
+     * For example, suppose we have a prefix = "pla" and a pool = ["i","d","s"].
      * We'll consider the "i" from the pool. This gives us "plai" but recursion might return
      *        a list of ("plaid", "plaids", "plais", and "plaisd".)
      *        Hint: what do all those words start with? What is used to make the differences?
@@ -99,13 +103,19 @@ public class TextTwister
      * "pladis", "plads", "pladsi", "plas", "plasi", "plasid", "plasd" and "plasdi".)
      *
      * @param prefix - the starting part of all words to be generated
-     * @param pool - the letters available to "play" with to make new words
+     * @param pool - a list of the letters available to "play" with to make new words
      * @return - a list of words that start with "prefix" and end with a combination of letters in "pool" zero or one
      * times.
      */
-    public ArrayList<String> twistWord(String prefix, String pool)
+    public ArrayList<String> twistWord(String prefix, ArrayList<String> pool)
     {
-        System.out.println("prefix: '"+prefix+"'\tpool: '"+pool+";"); // recommended for debugging.
+        //  recommended for debugging, but otherwise comment this out ------------
+        System.out.print("prefix: '"+prefix+"'\tpool: ");
+        for (String s: pool)
+            System.out.print(s);
+        System.out.println();
+        // -----------------------------------------------------------------------
+
         ArrayList<String> result = null;
         // TODO: write this recursive method.
 
