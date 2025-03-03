@@ -48,9 +48,10 @@ public class TextTwister
      *      stringWithLetterAtIndexRemoved(["r","o","d","e","n","t"], 6) --> throws an exception.
      * @param letters - the source list of letters
      * @param i - the index of the character to remove
-     * @return - another ArrayList of letters that is one character shorter than s.
+     * @return - another ArrayList of letters that is one character shorter than letters.
+     * PostCondition: letters is unchanged.
      */
-    public ArrayList<String> stringWithLetterAtIndexRemoved(ArrayList<String> letters, int i)
+    public ArrayList<String> stringArrayListWithLetterAtIndexRemoved(ArrayList<String> letters, int i)
     {
         ArrayList<String> result = new ArrayList<String>();
 
